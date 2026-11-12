@@ -1,0 +1,87 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 900 700">
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#182a29"/>
+      <stop offset="100%" stop-color="#354b43"/>
+    </linearGradient>
+
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e9e5d7"/>
+      <stop offset="100%" stop-color="#b8c0ad"/>
+    </linearGradient>
+
+    <filter id="shadow">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="700" fill="url(#background)"/>
+
+  <!-- Decorative frame -->
+  <rect x="55" y="55" width="790" height="590"
+        rx="8" fill="none"
+        stroke="#d4cdb9" stroke-opacity=".25"/>
+
+  <!-- Central paper -->
+  <rect x="210" y="115" width="480" height="470"
+        rx="5" fill="#0b1514" opacity=".35"
+        filter="url(#shadow)"/>
+
+  <rect x="200" y="105" width="480" height="470"
+        rx="5" fill="url(#paper)"/>
+
+  <!-- Ambiguous central geometry -->
+  <g fill="none" stroke="#263b35"
+     stroke-width="8" stroke-linejoin="round">
+
+    <path d="M440 190 L555 390 L325 390 Z"/>
+
+    <path d="M440 190 L440 455"/>
+
+    <path d="M325 390 L555 390"/>
+
+    <path d="M440 455 L325 390"/>
+    <path d="M440 455 L555 390"/>
+
+  </g>
+
+  <!-- Geometric details -->
+  <g fill="#263b35">
+    <circle cx="440" cy="190" r="8"/>
+    <circle cx="325" cy="390" r="8"/>
+    <circle cx="555" cy="390" r="8"/>
+    <circle cx="440" cy="455" r="8"/>
+  </g>
+
+  <!-- Subtle visual markers -->
+  <g fill="none" stroke="#65796c"
+     stroke-width="2" opacity=".55">
+    <circle cx="440" cy="325" r="135"/>
+    <circle cx="440" cy="325" r="165"/>
+  </g>
+
+  <!-- Editorial text -->
+  <text x="450" y="535"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="19"
+        letter-spacing="5"
+        fill="#35483e">
+    PERCEPTION IS INTERPRETATION
+  </text>
+
+  <text x="450" y="615"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="12"
+        letter-spacing="4"
+        fill="#d5d2c5"
+        opacity=".8">
+    MINDVAULT / PERCEPTION LAB
+  </text>
+
+</svg>
