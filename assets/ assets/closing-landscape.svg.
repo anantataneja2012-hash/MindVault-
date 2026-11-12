@@ -1,0 +1,86 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 1000"
+     preserveAspectRatio="xMidYMid slice">
+
+  <defs>
+    <linearGradient id="eveningSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#101b20"/>
+      <stop offset="55%" stop-color="#344d4a"/>
+      <stop offset="100%" stop-color="#78867b"/>
+    </linearGradient>
+
+    <linearGradient id="darkWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#465e57"/>
+      <stop offset="100%" stop-color="#111d20"/>
+    </linearGradient>
+
+    <linearGradient id="darkOverlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080f13" stop-opacity=".15"/>
+      <stop offset="100%" stop-color="#080f13" stop-opacity=".78"/>
+    </linearGradient>
+
+    <filter id="softMist">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <!-- Evening sky -->
+  <rect width="1600" height="1000" fill="url(#eveningSky)"/>
+
+  <!-- Distant mountains -->
+  <path d="M0 500 L180 350 L350 450
+           L550 270 L760 465
+           L960 300 L1160 455
+           L1370 310 L1600 470
+           L1600 700 L0 700 Z"
+        fill="#354a47"/>
+
+  <!-- Mountain shadows -->
+  <path d="M0 545 L230 425 L410 520
+           L650 370 L850 520
+           L1080 395 L1300 510
+           L1500 410 L1600 475
+           L1600 720 L0 720 Z"
+        fill="#263b38"/>
+
+  <!-- Forest -->
+  <path d="M0 600
+           L70 550 L120 605 L170 535
+           L230 600 L300 525 L365 610
+           L430 555 L500 615 L570 550
+           L640 610 L710 555 L780 615
+           L850 545 L920 615 L1000 555
+           L1080 610 L1160 540 L1230 610
+           L1310 550 L1390 615 L1460 545
+           L1530 610 L1600 560
+           L1600 720 L0 720 Z"
+        fill="#142a27"/>
+
+  <!-- Lake -->
+  <rect x="0" y="665" width="1600" height="335"
+        fill="url(#darkWater)"/>
+
+  <!-- Reflections -->
+  <g fill="none" stroke="#b4b9a8" opacity=".16">
+    <path d="M100 710 Q350 700 600 715" stroke-width="3"/>
+    <path d="M760 755 Q1050 740 1370 760" stroke-width="2"/>
+    <path d="M200 825 Q500 810 830 830" stroke-width="3"/>
+    <path d="M950 890 Q1210 875 1530 895" stroke-width="2"/>
+    <path d="M350 955 Q680 940 1010 960" stroke-width="2"/>
+  </g>
+
+  <!-- Mist over the water -->
+  <ellipse cx="800" cy="680" rx="850" ry="95"
+           fill="#d5d8c9" opacity=".17"
+           filter="url(#softMist)"/>
+
+  <!-- Subtle moonlight -->
+  <circle cx="1260" cy="220" r="95"
+          fill="#d8d8c5" opacity=".08"
+          filter="url(#softMist)"/>
+
+  <!-- Final cinematic overlay -->
+  <rect width="1600" height="1000" fill="url(#darkOverlay)"/>
+
+</svg>
