@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MindVault | Explore the Architecture of Thought</title>
+
+  <meta
+    name="description"
+    content="An independent space for exploring philosophy, psychology, neuroscience, perception and the architecture of human thought."
+  >
+
+  <meta name="theme-color" content="#171916">
+
+  <meta property="og:title" content="MindVault">
+  <meta
+    property="og:description"
+    content="Explore the architecture of thought."
+  >
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ======================================
+       CINEMATIC ENTRY SCREEN
+  ======================================= -->
+
+  <div class="entry-screen" id="entryScreen">
+
+    <div class="entry-background">
+      <img
+        src="assets/hero-landscape.svg"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+
+    <div class="entry-overlay"></div>
+
+    <div class="entry-content">
+
+      <p class="entry-eyebrow">AN INDEPENDENT SPACE FOR THOUGHT</p>
+
+      <h1 class="entry-title">MINDVAULT</h1>
+
+      <p class="entry-tagline">
+        Explore the architecture of thought.
+      </p>
+
+      <button
+        type="button"
+        class="enter-button"
+        id="enterButton"
+      >
+        ENTER
+        <span aria-hidden="true">↗</span>
+      </button>
+
+    </div>
+
+    <p class="entry-footer">
+      PHILOSOPHY · PSYCHOLOGY · NEUROSCIENCE
+    </p>
+
+  </div>
+
+
+  <!-- ======================================
+       MAIN WEBSITE
+  ======================================= -->
+
+  <div class="site-wrapper" id="siteWrapper" hidden>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+      <a href="#home" class="wordmark" aria-label="MindVault home">
+        MINDVAULT
+      </a>
+
+      <nav class="desktop-navigation" aria-label="Main navigation">
+
+        <a href="#explore">Explore</a>
+        <a href="#daily-ideas">Daily Ideas</a>
+        <a href="#debate-room">Debate Room</a>
+        <a href="#about">About</a>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <button
+          type="button"
+          class="account-button"
+          id="accountButton"
+        >
+          ACCOUNT
+        </button>
+
+        <button
+          type="button"
+          class="mobile-menu-button"
+          id="mobileMenuButton"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileNavigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav
+      class="mobile-navigation"
+      id="mobileNavigation"
+      aria-label="Mobile navigation"
+      hidden
+    >
+
+      <a href="#explore">Explore</a>
+      <a href="#philosophy">Philosophy Archive</a>
+      <a href="#perception">Perception Lab</a>
+      <a href="#experiments">Psychology Experiments</a>
+      <a href="#daily-ideas">Daily Ideas</a>
+      <a href="#battles">Philosophy Battles</a>
+      <a href="#debate-room">Debate Room</a>
+      <a href="#anonymous-diary">Anonymous Diary</a>
+      <a href="#private-diary">Private Diary</a>
+
+    </nav>
+
+
+    <!-- ======================================
+         HERO
+    ======================================= -->
+
+    <main id="home">
+
+      <section class="hero-section">
+
+        <div class="hero-image">
+          <img
+            src="assets/hero-landscape.svg"
+            alt="An atmospheric landscape"
+            fetchpriority="high"
+          >
+        </div>
+
+        <div class="hero-shade"></div>
+
+        <div class="hero-content">
+
+          <p class="section-eyebrow">
+            THINK BEYOND THE OBVIOUS
+          </p>
+
+          <h1>
+            The mind is a universe
+            <span>waiting to be explored.</span>
+          </h1>
+
+          <p class="hero-description">
+            A space dedicated to questioning assumptions,
+            examining human behaviour and exploring the
+            complex architecture of thought.
+          </p>
+
+          <a href="#explore" class="primary-link">
+            EXPLORE MINDVAULT
+            <span aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+
+        <div class="hero-bottom-label">
+          <span>01 / EXPLORE</span>
+          <span>SCROLL TO DISCOVER</span>
+        </div>
+
+      </section>
+
+
+      <!-- ======================================
+           INTRODUCTION
+      ======================================= -->
+
+      <section class="introduction-section" id="about">
+
+        <p class="section-eyebrow">THE IDEA BEHIND MINDVAULT</p>
+
+        <h2>
+          Question what you know.
+          <span>Examine what you believe.</span>
+        </h2>
+
+        <p>
+          MindVault brings together philosophy, psychology and
+          neuroscience to encourage independent thinking.
+          It is a place to explore ideas, examine interpretations
+          and understand the limits of what we know.
+        </p>
+
+      </section>
+
+
+      <!-- ======================================
+           EXPLORE
+      ======================================= -->
+
+      <section class="explore-section" id="explore">
+
+        <div class="section-heading">
+
+          <div>
+            <p class="section-eyebrow">THE COLLECTION</p>
+            <h2>Explore the mind.</h2>
+          </div>
+
+          <p>
+            Different disciplines. Different perspectives.
+            One place to question them.
+          </p>
+
+        </div>
+
+
+        <!-- PHILOSOPHY ARCHIVE -->
+
+        <article class="exploration-item" id="philosophy">
+
+          <div class="exploration-number">01</div>
+
+          <div class="exploration-content">
+
+            <p class="section-eyebrow">PHILOSOPHY</p>
+
+            <h3>Philosophy Archive</h3>
+
+            <p>
+              Explore fundamental questions about existence,
+              knowledge, identity, morality, consciousness
+              and the nature of reality.
+            </p>
+
+            <p class="item-meta">
+              20 FOUNDATIONAL TOPICS
+            </p>
+
+            <button
+              type="button"
+              class="text-link"
+              data-section="philosophy"
+            >
+              ENTER ARCHIVE <span aria-hidden="true">↗</span>
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- PERCEPTION LAB -->
+
+        <article class="exploration-item" id="perception">
+
+          <div class="exploration-number">02</div>
+
+          <div class="exploration-content">
+
+            <p class="section-eyebrow">PERCEPTION & COGNITION</p>
+
+            <h3>Perception Lab</h3>
+
+            <p>
+              Examine ambiguous situations, visual illusions
+              and cognitive interpretations. Discover how
+              context and attention influence perception.
+            </p>
+
+            <p class="item-meta">
+              INTERACTIVE EXERCISES
+            </p>
+
+            <button
+              type="button"
+              class="text-link"
+              data-section="perception"
+            >
+              ENTER THE LAB <span aria-hidden="true">↗</span>
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- PSYCHOLOGY EXPERIMENTS -->
+
+        <article class="exploration-item" id="experiments">
+
+          <div class="exploration-number">03</div>
+
+          <div class="exploration-content">
+
+            <p class="section-eyebrow">PSYCHOLOGY</p>
+
+            <h3>Psychology Experiments</h3>
+
+            <p>
+              Explore structured psychological activities
+              examining memory, attention, decision-making,
+              cognitive styles and human behaviour.
+            </p>
+
+            <p class="item-meta">
+              20 QUESTIONS · MONTHLY RELEASES
+            </p>
+
+            <button
+              type="button"
+              class="text-link"
+              data-section="experiments"
+            >
+              EXPLORE EXPERIMENTS <span aria-hidden="true">↗</span>
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- PHILOSOPHY BATTLES -->
+
+        <article class="exploration-item" id="battles">
+
+          <div class="exploration-number">04</div>
+
+          <div class="exploration-content">
+
+            <p class="section-eyebrow">ARGUMENT & REASONING</p>
+
+            <h3>Philosophy Battles</h3>
+
+            <p>
+              Examine opposing philosophical positions,
+              understand their arguments and challenge
+              assumptions through reasoned analysis.
+            </p>
+
+            <p class="item-meta">
+              MULTIPLE PERSPECTIVES
+            </p>
+
+            <button
+              type="button"
+              class="text-link"
+              data-section="battles"
+            >
+              ENTER BATTLES <span aria-hidden="true">↗</span>
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- DEBATE ROOM -->
+
+        <article class="exploration-item" id="debate-room">
+
+          <div class="exploration-number">05</div>
+
+          <div class="exploration-content">
+
+            <p class="section-eyebrow">COMMUNITY DISCUSSION</p>
+
+            <h3>Debate Room</h3>
+
+            <p>
+              Enter discussions across philosophy, psychology
+              and neuroscience. Read arguments, respond to
+              ideas and create new debates.
+            </p>
+
+            <p class="item-meta">
+              NEW TOPICS EVERY 14 DAYS
+            </p>
+
+            <button
+              type="button"
+              class="text-link"
+              data-section="debate-room"
+            >
+              ENTER DEBATE ROOM <span aria-hidden="true">↗</span>
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- ANONYMOUS DIARY -->
+
+        <article class="exploration-item" id="anonymous-diary">
+
+          <div class="exploration-number">06</div>
+
+          <div class="exploration-content">
+
+            <p class="section-eyebrow">SHARED REFLECTIONS</p>
+
+            <h3>Anonymous Diary</h3>
+
+            <p>
+              Read and contribute anonymous reflections,
+              personal observations and perspectives.
+              Submissions are subject to moderation.
+            </p>
+
+            <p class="item-meta">
+              PUBLIC · ANONYMOUS CONTRIBUTIONS
+            </p>
+
+            <button
+              type="button"
+              class="text-link"
+              data-section="anonymous-diary"
+            >
+              EXPLORE REFLECTIONS <span aria-hidden="true">↗</span>
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRIVATE DIARY -->
+
+        <article class="exploration-item" id="private-diary">
+
+          <div class="exploration-number">07</div>
+
+          <div class="exploration-content">
+
+            <p class="section-eyebrow">PERSONAL SPACE</p>
+
+            <h3>Private Diary</h3>
+
+            <p>
+              A personal writing space for private notes,
+              multiple notebooks, saved pages and
+              individual reflections.
+            </p>
+
+            <p class="item-meta">
+              PRIVATE · ACCOUNT REQUIRED
+            </p>
+
+            <button
+              type="button"
+              class="text-link"
+              data-section="private-diary"
+            >
+              OPEN PRIVATE DIARY <span aria-hidden="true">↗</span>
+            </button>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- ======================================
+           DAILY IDEAS
+      ======================================= -->
+
+      <section class="daily-ideas-section" id="daily-ideas">
+
+        <div class="section-heading">
+
+          <div>
+            <p class="section-eyebrow">A DAILY EXPLORATION</p>
+            <h2>Ideas worth examining.</h2>
+          </div>
+
+          <p>
+            Sixty foundational ideas across three
+            interconnected disciplines.
+          </p>
+
+        </div>
+
+        <div class="daily-ideas-content">
+
+          <div class="idea-category">
+            <span>01</span>
+            <h3>Philosophy</h3>
+            <p>Questions about existence, truth and meaning.</p>
+            <span class="item-meta">20 IDEAS</span>
+          </div>
+
+          <div class="idea-category">
+            <span>02</span>
+            <h3>Psychology</h3>
+            <p>Explorations of behaviour, thought and emotion.</p>
+            <span class="item-meta">20 IDEAS</span>
+          </div>
+
+          <div class="idea-category">
+            <span>03</span>
+            <h3>Neuroscience</h3>
+            <p>Understanding the brain and nervous system.</p>
+            <span class="item-meta">20 IDEAS</span>
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="text-link"
+          data-section="daily-ideas"
+        >
+          DISCOVER DAILY IDEAS <span aria-hidden="true">↗</span>
+        </button>
+
+      </section>
+
+
+      <!-- ======================================
+           THOUGHT OF THE DAY
+      ======================================= -->
+
+      <section class="thought-section" id="thought-of-the-day">
+
+        <p class="section-eyebrow">THOUGHT OF THE DAY</p>
+
+        <h2>
+          An idea is only the beginning.
+        </h2>
+
+        <p>
+          Explore reasoned reflections, noteworthy external
+          articles and anonymous schools of thought.
+        </p>
+
+        <div class="thought-collections">
+
+          <div>
+            <h3>Original Thoughts</h3>
+            <p>Reasoned ideas, questions and counterarguments.</p>
+          </div>
+
+          <div>
+            <h3>Reading Collection</h3>
+            <p>Selected articles from external publications.</p>
+          </div>
+
+          <div>
+            <h3>Community Perspectives</h3>
+            <p>Anonymous, moderated schools of thought.</p>
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="text-link"
+          data-section="thought-of-the-day"
+        >
+          EXPLORE THE COLLECTION <span aria-hidden="true">↗</span>
+        </button>
+
+      </section>
+
+
+      <!-- ======================================
+           CLOSING SECTION
+      ======================================= -->
+
+      <section class="closing-section">
+
+        <div class="closing-background">
+          <img
+            src="assets/closing-landscape.svg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="closing-overlay"></div>
+
+        <div class="closing-content">
+
+          <p class="section-eyebrow">
+            THE EXPLORATION CONTINUES
+          </p>
+
+          <h2>
+            Think independently.
+            <span>Question continuously.</span>
+          </h2>
+
+          <a href="#home" class="primary-link">
+            RETURN TO THE BEGINNING
+            <span aria-hidden="true">↑</span>
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- ======================================
+         FOOTER
+    ======================================= -->
+
+    <footer class="site-footer" id="footer">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+
+          <a href="#home" class="wordmark">
+            MINDVAULT
+          </a>
+
+          <p>
+            Explore the architecture of thought.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>EXPLORE</h3>
+
+          <a href="#philosophy">Philosophy Archive</a>
+          <a href="#perception">Perception Lab</a>
+          <a href="#experiments">Psychology Experiments</a>
+          <a href="#battles">Philosophy Battles</a>
+          <a href="#debate-room">Debate Room</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>PERSONAL SPACE</h3>
+
+          <a href="#anonymous-diary">Anonymous Diary</a>
+          <a href="#private-diary">Private Diary</a>
+          <a href="#daily-ideas">Daily Ideas</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>INFORMATION</h3>
+
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+          <a href="mailto:supportmindvaultspace@gmail.com">
+            Contact & Support
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          © <span id="currentYear">2026</span> MINDVAULT.
+          All rights reserved.
+        </p>
+
+        <p>
+          AN INDEPENDENT SPACE FOR INTELLECTUAL EXPLORATION.
+        </p>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <!-- ======================================
+       ACCOUNT INTERFACE
+       Authentication will be connected later.
+  ======================================= -->
+
+  <dialog
+    class="account-dialog"
+    id="accountDialog"
+    aria-labelledby="accountDialogTitle"
+  >
+
+    <div class="dialog-content">
+
+      <button
+        type="button"
+        class="dialog-close"
+        id="closeAccountDialog"
+        aria-label="Close account window"
+      >
+        ×
+      </button>
+
+      <p class="section-eyebrow">YOUR MINDVAULT ACCOUNT</p>
+
+      <h2 id="accountDialogTitle">Personal access.</h2>
+
+      <p>
+        Account authentication is being prepared.
+        Private Diary and participation features will
+        require an authorised account.
+      </p>
+
+      <p class="item-meta">
+        EMAIL OTP AUTHENTICATION: NOT YET CONNECTED
+      </p>
+
+    </div>
+
+  </dialog>
+
+
+</body>
+</html>
