@@ -1,0 +1,89 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 900 700">
+
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eeeadd"/>
+      <stop offset="100%" stop-color="#c9c6b5"/>
+    </linearGradient>
+
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#263c36"/>
+      <stop offset="100%" stop-color="#101b1b"/>
+    </linearGradient>
+
+    <filter id="softShadow">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="700" fill="#1c302d"/>
+
+  <rect x="145" y="65" width="610" height="570"
+        rx="5" fill="#091311" opacity=".35"
+        filter="url(#softShadow)"/>
+
+  <rect x="155" y="55" width="590" height="570"
+        rx="5" fill="url(#paper)"/>
+
+  <!-- Symmetrical abstract inkblot -->
+  <g fill="url(#ink)">
+
+    <path d="M450 145
+      C405 155 385 205 360 235
+      C325 205 280 210 275 255
+      C235 265 245 320 280 340
+      C250 385 290 425 335 415
+      C325 470 375 495 410 460
+      C425 505 445 520 450 540
+      C455 520 475 505 490 460
+      C525 495 575 470 565 415
+      C610 425 650 385 620 340
+      C655 320 665 265 625 255
+      C620 210 575 205 540 235
+      C515 205 495 155 450 145 Z"/>
+
+    <path d="M450 195
+      C420 225 420 265 390 285
+      C370 305 385 350 415 360
+      C390 395 410 430 450 445
+      C490 430 510 395 485 360
+      C515 350 530 305 510 285
+      C480 265 480 225 450 195 Z"
+      fill="#aeb6a4"/>
+
+  </g>
+
+  <!-- Small detached ink shapes -->
+  <g fill="#263c36">
+    <ellipse cx="300" cy="185" rx="18" ry="32"
+             transform="rotate(-35 300 185)"/>
+    <ellipse cx="600" cy="185" rx="18" ry="32"
+             transform="rotate(35 600 185)"/>
+    <circle cx="250" cy="445" r="12"/>
+    <circle cx="650" cy="445" r="12"/>
+    <ellipse cx="385" cy="520" rx="12" ry="22"/>
+    <ellipse cx="515" cy="520" rx="12" ry="22"/>
+  </g>
+
+  <!-- Editorial details -->
+  <text x="450" y="585"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="17"
+        letter-spacing="5"
+        fill="#35483e">
+    WHAT DO YOU SEE?
+  </text>
+
+  <text x="450" y="665"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="12"
+        letter-spacing="4"
+        fill="#d5d2c5">
+    MINDVAULT / PERCEPTION LAB
+  </text>
+
+</svg>
