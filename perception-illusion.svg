@@ -1,0 +1,153 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1000 700"
+     role="img"
+     aria-labelledby="title description">
+
+  <title id="title">The Vase and Faces Illusion</title>
+  <desc id="description">
+    A symmetrical dark and light optical illusion.
+    The central light shape resembles a vase,
+    while the dark shapes on either side resemble faces.
+  </desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#202b28"/>
+      <stop offset="100%" stop-color="#111a19"/>
+    </linearGradient>
+
+    <linearGradient id="vase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e4dece"/>
+      <stop offset="100%" stop-color="#b8b19f"/>
+    </linearGradient>
+
+    <linearGradient id="silhouette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111b19"/>
+      <stop offset="100%" stop-color="#293833"/>
+    </linearGradient>
+
+    <filter id="softShadow">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#background)"/>
+
+  <!-- Subtle frame -->
+  <rect x="35" y="35" width="930" height="630"
+        rx="8"
+        fill="none"
+        stroke="#d4c9ad"
+        stroke-opacity=".22"
+        stroke-width="1.5"/>
+
+  <!-- Soft central shadow -->
+  <ellipse cx="500" cy="355" rx="270" ry="245"
+           fill="#080e0d"
+           opacity=".35"
+           filter="url(#softShadow)"/>
+
+  <!-- Left face silhouette -->
+  <path d="
+    M80 130
+    C165 100 265 120 330 175
+    C370 210 395 245 414 275
+    C390 280 370 294 354 310
+    C375 320 390 335 400 350
+    C376 360 359 374 348 393
+    C365 410 374 430 365 450
+    C350 475 315 490 280 495
+    C255 520 245 550 255 585
+    C205 620 135 625 80 590
+    Z"
+    fill="url(#silhouette)"/>
+
+  <!-- Right face silhouette -->
+  <path d="
+    M920 130
+    C835 100 735 120 670 175
+    C630 210 605 245 586 275
+    C610 280 630 294 646 310
+    C625 320 610 335 600 350
+    C624 360 641 374 652 393
+    C635 410 626 430 635 450
+    C650 475 685 490 720 495
+    C745 520 755 550 745 585
+    C795 620 865 625 920 590
+    Z"
+    fill="url(#silhouette)"/>
+
+  <!-- Central vase shape -->
+  <path d="
+    M420 135
+    C435 165 445 195 440 225
+    C432 265 400 295 380 330
+    C360 365 360 410 380 445
+    C405 490 455 520 500 520
+    C545 520 595 490 620 445
+    C640 410 640 365 620 330
+    C600 295 568 265 560 225
+    C555 195 565 165 580 135
+    Z"
+    fill="url(#vase)"
+    stroke="#eee8d8"
+    stroke-opacity=".55"
+    stroke-width="2"/>
+
+  <!-- Vase rim -->
+  <path d="M415 135 Q500 115 585 135"
+        fill="none"
+        stroke="#eee8d8"
+        stroke-width="7"
+        stroke-linecap="round"
+        opacity=".85"/>
+
+  <!-- Vase subtle inner shading -->
+  <path d="
+    M460 160
+    C475 225 450 270 425 320
+    C405 360 410 410 440 445"
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity=".22"
+    stroke-width="10"
+    stroke-linecap="round"/>
+
+  <!-- Face details: left -->
+  <g fill="none"
+     stroke="#b6ad99"
+     stroke-width="5"
+     stroke-linecap="round"
+     opacity=".65">
+
+    <path d="M285 270 Q330 250 365 275"/>
+    <path d="M350 345 Q375 350 390 365"/>
+    <path d="M295 420 Q325 430 350 420"/>
+  </g>
+
+  <!-- Face details: right -->
+  <g fill="none"
+     stroke="#b6ad99"
+     stroke-width="5"
+     stroke-linecap="round"
+     opacity=".65">
+
+    <path d="M715 270 Q670 250 635 275"/>
+    <path d="M650 345 Q625 350 610 365"/>
+    <path d="M705 420 Q675 430 650 420"/>
+  </g>
+
+  <!-- Grounding shadow -->
+  <ellipse cx="500" cy="570" rx="170" ry="18"
+           fill="#070d0c"
+           opacity=".25"/>
+
+  <!-- Small decorative marks -->
+  <g fill="#d4c9ad" opacity=".55">
+    <circle cx="500" cy="85" r="3"/>
+    <circle cx="500" cy="615" r="3"/>
+  </g>
+
+</svg>
