@@ -1,0 +1,185 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1000 700"
+     role="img"
+     aria-labelledby="title description">
+
+  <title id="title">MindVault Abstract Inkblot</title>
+  <desc id="description">
+    An original symmetrical abstract inkblot with organic
+    dark shapes, muted burgundy details and a pale background.
+  </desc>
+
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e2d5"/>
+      <stop offset="100%" stop-color="#c9c0b0"/>
+    </linearGradient>
+
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#27302c"/>
+      <stop offset="100%" stop-color="#101715"/>
+    </linearGradient>
+
+    <linearGradient id="wine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#774b4d"/>
+      <stop offset="100%" stop-color="#442b31"/>
+    </linearGradient>
+
+    <filter id="softEdge">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- Paper background -->
+  <rect width="1000" height="700" fill="url(#paper)"/>
+
+  <!-- Fine paper border -->
+  <rect x="25" y="25" width="950" height="650"
+        rx="4"
+        fill="none"
+        stroke="#5b554a"
+        stroke-opacity=".25"
+        stroke-width="1.5"/>
+
+  <!-- Central ink shadow -->
+  <ellipse cx="500" cy="350" rx="260" ry="285"
+           fill="#101715"
+           opacity=".12"
+           filter="url(#softEdge)"/>
+
+  <!-- Main symmetrical ink shape -->
+  <g fill="url(#ink)">
+
+    <!-- Left upper wing -->
+    <path d="
+      M485 105
+      C435 65 365 70 325 115
+      C280 165 305 215 265 250
+      C225 285 165 280 155 330
+      C145 375 190 405 225 415
+      C195 455 205 505 250 525
+      C290 545 325 510 355 535
+      C385 565 370 615 415 625
+      C450 635 480 590 485 550
+      Z"/>
+
+    <!-- Right upper wing -->
+    <path d="
+      M515 105
+      C565 65 635 70 675 115
+      C720 165 695 215 735 250
+      C775 285 835 280 845 330
+      C855 375 810 405 775 415
+      C805 455 795 505 750 525
+      C710 545 675 510 645 535
+      C615 565 630 615 585 625
+      C550 635 520 590 515 550
+      Z"/>
+
+    <!-- Central body -->
+    <path d="
+      M450 120
+      C470 160 480 205 470 245
+      C455 295 425 320 430 365
+      C435 410 465 445 470 495
+      C475 545 450 580 500 600
+      C550 580 525 545 530 495
+      C535 445 565 410 570 365
+      C575 320 545 295 530 245
+      C520 205 530 160 550 120
+      C520 135 480 135 450 120
+      Z"/>
+  </g>
+
+  <!-- Organic outer lobes -->
+  <g fill="#35423b" opacity=".92">
+
+    <path d="
+      M335 145
+      C290 125 255 155 265 200
+      C275 230 315 235 345 215
+      C370 195 365 165 335 145 Z"/>
+
+    <path d="
+      M665 145
+      C710 125 745 155 735 200
+      C725 230 685 235 655 215
+      C630 195 635 165 665 145 Z"/>
+
+    <path d="
+      M205 315
+      C165 295 135 325 155 365
+      C175 400 220 390 240 365
+      C255 345 240 325 205 315 Z"/>
+
+    <path d="
+      M795 315
+      C835 295 865 325 845 365
+      C825 400 780 390 760 365
+      C745 345 760 325 795 315 Z"/>
+  </g>
+
+  <!-- Burgundy inner details -->
+  <g fill="url(#wine)" opacity=".9">
+
+    <path d="
+      M365 245
+      C335 225 305 245 315 275
+      C325 305 360 310 380 285
+      C395 265 385 250 365 245 Z"/>
+
+    <path d="
+      M635 245
+      C665 225 695 245 685 275
+      C675 305 640 310 620 285
+      C605 265 615 250 635 245 Z"/>
+
+    <path d="
+      M420 425
+      C390 405 365 430 380 460
+      C395 490 425 485 440 465
+      C450 450 440 435 420 425 Z"/>
+
+    <path d="
+      M580 425
+      C610 405 635 430 620 460
+      C605 490 575 485 560 465
+      C550 450 560 435 580 425 Z"/>
+  </g>
+
+  <!-- Fine mirrored markings -->
+  <g fill="none"
+     stroke="#b8ad98"
+     stroke-width="5"
+     stroke-linecap="round"
+     opacity=".6">
+
+    <path d="M305 175 Q350 155 380 190"/>
+    <path d="M695 175 Q650 155 620 190"/>
+
+    <path d="M220 355 Q255 370 280 345"/>
+    <path d="M780 355 Q745 370 720 345"/>
+
+    <path d="M400 535 Q445 550 465 520"/>
+    <path d="M600 535 Q555 550 535 520"/>
+  </g>
+
+  <!-- Small isolated ink marks -->
+  <g fill="#26312c" opacity=".85">
+    <circle cx="390" cy="105" r="9"/>
+    <circle cx="610" cy="105" r="9"/>
+    <circle cx="275" cy="590" r="7"/>
+    <circle cx="725" cy="590" r="7"/>
+    <ellipse cx="500" cy="80" rx="10" ry="17"/>
+    <ellipse cx="500" cy="635" rx="10" ry="17"/>
+  </g>
+
+  <!-- Center symmetry guide -->
+  <path d="M500 65 V650"
+        stroke="#a89e8c"
+        stroke-width="1"
+        stroke-dasharray="4 12"
+        opacity=".28"/>
+
+</svg>
