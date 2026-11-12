@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MindVault | Administration</title>
+
+  <meta
+    name="description"
+    content="MindVault administration portal."
+  >
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta name="theme-color" content="#171916">
+
+  <link rel="stylesheet" href="admin.css">
+
+  <script src="admin.js" defer></script>
+
+</head>
+
+<body>
+
+  <!-- ======================================
+       ADMIN LOGIN
+  ======================================= -->
+
+  <main class="admin-login-page" id="adminLoginPage">
+
+    <section class="admin-login-container">
+
+      <a href="index.html" class="admin-wordmark">
+        MINDVAULT
+      </a>
+
+      <p class="admin-eyebrow">
+        RESTRICTED ADMINISTRATION PORTAL
+      </p>
+
+      <h1>Administrator access.</h1>
+
+      <p class="admin-description">
+        This area is reserved for authorised MindVault
+        administration.
+      </p>
+
+
+      <form id="adminLoginForm">
+
+        <div class="admin-form-group">
+
+          <label for="adminEmail">
+            Administrator email
+          </label>
+
+          <input
+            type="email"
+            id="adminEmail"
+            name="email"
+            value="anantataneja4@gmail.com"
+            autocomplete="username"
+            readonly
+            required
+          >
+
+        </div>
+
+
+        <div class="admin-form-group">
+
+          <label for="adminPassword">
+            Password
+          </label>
+
+          <input
+            type="password"
+            id="adminPassword"
+            name="password"
+            placeholder="Enter administrator password"
+            autocomplete="current-password"
+            required
+          >
+
+        </div>
+
+
+        <p
+          class="admin-message"
+          id="adminLoginMessage"
+          role="alert"
+          aria-live="polite"
+        ></p>
+
+
+        <button
+          type="submit"
+          class="admin-login-button"
+          id="adminLoginButton"
+        >
+          SIGN IN
+        </button>
+
+      </form>
+
+
+      <p class="admin-security-note">
+        AUTHORISED ACCESS ONLY
+      </p>
+
+      <a href="index.html" class="admin-back-link">
+        ← Return to MindVault
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================
+       ADMIN DASHBOARD
+  ======================================= -->
+
+  <div class="admin-dashboard" id="adminDashboard" hidden>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar">
+
+      <div class="admin-sidebar-brand">
+
+        <a href="index.html" class="admin-wordmark">
+          MINDVAULT
+        </a>
+
+        <p>ADMINISTRATION</p>
+
+      </div>
+
+
+      <nav class="admin-navigation" aria-label="Admin navigation">
+
+        <p class="admin-nav-heading">OVERVIEW</p>
+
+        <button
+          type="button"
+          class="admin-nav-item active"
+          data-admin-section="overview"
+        >
+          Overview
+        </button>
+
+
+        <p class="admin-nav-heading">CONTENT MANAGEMENT</p>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="philosophy"
+        >
+          Philosophy Archive
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="perception"
+        >
+          Perception Lab
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="experiments"
+        >
+          Psychology Experiments
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="daily-ideas"
+        >
+          Daily Ideas
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="thoughts"
+        >
+          Thought of the Day
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="battles"
+        >
+          Philosophy Battles
+        </button>
+
+
+        <p class="admin-nav-heading">COMMUNITY</p>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="debates"
+        >
+          Debate Room
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="anonymous-diary"
+        >
+          Anonymous Diary
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="reports"
+        >
+          User Reports
+        </button>
+
+
+        <p class="admin-nav-heading">PLATFORM</p>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="notifications"
+        >
+          Announcements
+        </button>
+
+        <button
+          type="button"
+          class="admin-nav-item"
+          data-admin-section="settings"
+        >
+          Settings
+        </button>
+
+      </nav>
+
+
+      <div class="admin-sidebar-bottom">
+
+        <p class="admin-session-label">
+          ADMIN SESSION
+        </p>
+
+        <p id="adminSessionEmail">
+          Administrator
+        </p>
+
+        <button
+          type="button"
+          id="adminLogoutButton"
+          class="admin-logout-button"
+        >
+          LOG OUT
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN DASHBOARD -->
+
+    <main class="admin-main">
+
+
+      <!-- TOP BAR -->
+
+      <header class="admin-topbar">
+
+        <div>
+          <p class="admin-eyebrow">
+            MINDVAULT CONTROL CENTRE
+          </p>
+
+          <h1 id="adminPageTitle">
+            Overview
+          </h1>
+        </div>
+
+        <a href="index.html" target="_blank" rel="noopener noreferrer">
+          VIEW WEBSITE ↗
+        </a>
+
+      </header>
+
+
+      <!-- OVERVIEW -->
+
+      <section
+        class="admin-content-section"
+        id="adminOverview"
+        data-panel="overview"
+      >
+
+        <div class="admin-welcome">
+
+          <p class="admin-eyebrow">
+            ADMINISTRATOR WORKSPACE
+          </p>
+
+          <h2>Manage the architecture.</h2>
+
+          <p>
+            Control educational content, discussions,
+            submissions and platform settings.
+          </p>
+
+        </div>
+
+
+        <div class="admin-stat-grid">
+
+          <article class="admin-stat-card">
+            <p>PHILOSOPHY ARTICLES</p>
+            <h3 id="statPhilosophy">20</h3>
+          </article>
+
+          <article class="admin-stat-card">
+            <p>DAILY IDEAS</p>
+            <h3 id="statIdeas">60</h3>
+          </article>
+
+          <article class="admin-stat-card">
+            <p>MONTHLY EXPERIMENT QUESTIONS</p>
+            <h3 id="statExperiments">20</h3>
+          </article>
+
+          <article class="admin-stat-card">
+            <p>DEBATE CYCLE</p>
+            <h3>14 DAYS</h3>
+          </article>
+
+        </div>
+
+
+        <div class="admin-information">
+
+          <h3>Platform management</h3>
+
+          <p>
+            Content management and statistics will display
+            live database information after backend integration.
+          </p>
+
+          <p class="admin-warning">
+            Dashboard statistics shown here are initial
+            configuration targets, not live user or database counts.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- PHILOSOPHY -->
+
+      <section
+        class="admin-content-section"
+        id="adminPhilosophy"
+        data-panel="philosophy"
+        hidden
+      >
+
+        <p class="admin-eyebrow">CONTENT MANAGEMENT</p>
+
+        <h2>Philosophy Archive</h2>
+
+        <p>
+          Manage the 20 foundational philosophy articles.
+        </p>
+
+        <div class="admin-placeholder">
+          Article editor and publishing controls will be connected here.
+        </div>
+
+      </section>
+
+
+      <!-- PERCEPTION -->
+
+      <section
+        class="admin-content-section"
+        id="adminPerception"
+        data-panel="perception"
+        hidden
+      >
+
+        <p class="admin-eyebrow">INTERACTIVE CONTENT</p>
+
+        <h2>Perception Lab</h2>
+
+        <p>
+          Manage scenarios, images, questions,
+          explanations and scientific references.
+        </p>
+
+        <div class="admin-placeholder">
+          Perception exercise manager.
+        </div>
+
+      </section>
+
+
+      <!-- EXPERIMENTS -->
+
+      <section
+        class="admin-content-section"
+        id="adminExperiments"
+        data-panel="experiments"
+        hidden
+      >
+
+        <p class="admin-eyebrow">PSYCHOLOGY</p>
+
+        <h2>Psychology Experiments</h2>
+
+        <p>
+          Manage monthly releases and their 20 questions.
+        </p>
+
+        <div class="admin-placeholder">
+
+          <h3>Monthly release management</h3>
+
+          <p>
+            Create, edit, reorder, preview and publish questions.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- DAILY IDEAS -->
+
+      <section
+        class="admin-content-section"
+        id="adminDailyIdeas"
+        data-panel="daily-ideas"
+        hidden
+      >
+
+        <p class="admin-eyebrow">EDITORIAL COLLECTION</p>
+
+        <h2>Daily Ideas</h2>
+
+        <p>
+          Manage philosophy, psychology and neuroscience ideas.
+        </p>
+
+        <div class="admin-placeholder">
+          Daily Ideas content manager.
+        </div>
+
+      </section>
+
+
+      <!-- THOUGHTS -->
+
+      <section
+        class="admin-content-section"
+        id="adminThoughts"
+        data-panel="thoughts"
+        hidden
+      >
+
+        <p class="admin-eyebrow">EDITORIAL COLLECTION</p>
+
+        <h2>Thought of the Day</h2>
+
+        <p>
+          Manage original thoughts, external reading
+          and anonymous community perspectives.
+        </p>
+
+        <div class="admin-placeholder">
+          Thought collection manager.
+        </div>
+
+      </section>
+
+
+      <!-- BATTLES -->
+
+      <section
+        class="admin-content-section"
+        id="adminBattles"
+        data-panel="battles"
+        hidden
+      >
+
+        <p class="admin-eyebrow">ARGUMENT & REASONING</p>
+
+        <h2>Philosophy Battles</h2>
+
+        <p>
+          Manage opposing philosophical positions,
+          arguments and references.
+        </p>
+
+        <div class="admin-placeholder">
+          Philosophy Battles manager.
+        </div>
+
+      </section>
+
+
+      <!-- DEBATES -->
+
+      <section
+        class="admin-content-section"
+        id="adminDebates"
+        data-panel="debates"
+        hidden
+      >
+
+        <p class="admin-eyebrow">COMMUNITY</p>
+
+        <h2>Debate Room</h2>
+
+        <p>
+          Manage discussion topics, fortnightly publishing,
+          archives, pinned debates and moderation.
+        </p>
+
+        <div class="admin-placeholder">
+
+          <h3>14-day topic cycle</h3>
+
+          <p>
+            Publish new topics every 14 days and archive
+            previous discussions without deleting them.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ANONYMOUS DIARY -->
+
+      <section
+        class="admin-content-section"
+        id="adminAnonymousDiary"
+        data-panel="anonymous-diary"
+        hidden
+      >
+
+        <p class="admin-eyebrow">COMMUNITY SUBMISSIONS</p>
+
+        <h2>Anonymous Diary</h2>
+
+        <p>
+          Review reported submissions and moderate
+          public reflections.
+        </p>
+
+        <div class="admin-placeholder">
+          Anonymous submission moderation.
+        </div>
+
+      </section>
+
+
+      <!-- REPORTS -->
+
+      <section
+        class="admin-content-section"
+        id="adminReports"
+        data-panel="reports"
+        hidden
+      >
+
+        <p class="admin-eyebrow">SAFETY & MODERATION</p>
+
+        <h2>User Reports</h2>
+
+        <p>
+          Review reports and record moderation decisions.
+        </p>
+
+        <div class="admin-placeholder">
+          Report management and moderation queue.
+        </div>
+
+      </section>
+
+
+      <!-- NOTIFICATIONS -->
+
+      <section
+        class="admin-content-section"
+        id="adminNotifications"
+        data-panel="notifications"
+        hidden
+      >
+
+        <p class="admin-eyebrow">PLATFORM COMMUNICATION</p>
+
+        <h2>Announcements</h2>
+
+        <p>
+          Prepare platform announcements and content updates.
+        </p>
+
+        <div class="admin-placeholder">
+          Announcement editor.
+        </div>
+
+      </section>
+
+
+      <!-- SETTINGS -->
+
+      <section
+        class="admin-content-section"
+        id="adminSettings"
+        data-panel="settings"
+        hidden
+      >
+
+        <p class="admin-eyebrow">PLATFORM CONFIGURATION</p>
+
+        <h2>Settings</h2>
+
+        <p>
+          Manage administrator permissions, platform
+          configuration and audit records.
+        </p>
+
+        <div class="admin-placeholder">
+          Secure configuration controls will be connected
+          through the backend.
+        </div>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+</body>
+
+</html>
