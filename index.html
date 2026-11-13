@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101014">
+
+  <title>MindVault | Explore the Mind</title>
+
+  <meta
+    name="description"
+    content="MindVault is a space to explore philosophy, psychology, neuroscience, and the way we think."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ENTRY SCREEN -->
+  <section class="entry-screen" id="entryScreen">
+    <div class="entry-content">
+      <p class="eyebrow">A PRIVATE SPACE FOR CURIOUS MINDS</p>
+
+      <h1>Mind<span>Vault</span></h1>
+
+      <p class="entry-description">
+        Explore the mind. Question reality. Understand yourself.
+      </p>
+
+      <button class="enter-button" id="enterButton" type="button">
+        ENTER MINDVAULT
+      </button>
+    </div>
+  </section>
+
+
+  <!-- MAIN WEBSITE -->
+  <div class="site-wrapper" id="siteWrapper" hidden>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="#home" class="logo">Mind<span>Vault</span></a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#daily-ideas">Daily Ideas</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <button class="account-button" id="accountButton" type="button">
+        Account
+      </button>
+    </header>
+
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero-section" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">THINK BEYOND THE OBVIOUS</p>
+
+          <h2>
+            Your mind is a universe.
+            <span>Explore it.</span>
+          </h2>
+
+          <p>
+            A place for ideas, questions, perspectives, and the science
+            behind human thought.
+          </p>
+
+          <a href="#explore" class="primary-button">
+            Explore MindVault
+          </a>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="assets/hero-landscape.svg"
+            alt="Atmospheric landscape representing exploration and thought"
+          >
+        </div>
+      </section>
+
+
+      <!-- INTRODUCTION -->
+      <section class="intro-section" id="about">
+        <p class="eyebrow">WELCOME TO MINDVAULT</p>
+
+        <h2>Curiosity has no boundaries.</h2>
+
+        <p>
+          MindVault brings together philosophy, psychology, and neuroscience
+          to help you examine ideas, understand behaviour, and question
+          the assumptions shaping your world.
+        </p>
+      </section>
+
+
+      <!-- EXPLORE -->
+      <section class="explore-section" id="explore">
+        <div class="section-heading">
+          <p class="eyebrow">THE KNOWLEDGE LIBRARY</p>
+          <h2>Explore your interests.</h2>
+        </div>
+
+        <div class="explore-grid">
+
+          <article class="explore-card">
+            <span class="card-number">01</span>
+            <h3>Philosophy</h3>
+            <p>
+              Explore existence, ethics, identity, reality, and the
+              questions that have challenged humanity for centuries.
+            </p>
+            <a href="#philosophy">Explore philosophy →</a>
+          </article>
+
+          <article class="explore-card">
+            <span class="card-number">02</span>
+            <h3>Psychology</h3>
+            <p>
+              Discover human behaviour, personality, emotions,
+              cognition, and the patterns behind our decisions.
+            </p>
+            <a href="#psychology">Explore psychology →</a>
+          </article>
+
+          <article class="explore-card">
+            <span class="card-number">03</span>
+            <h3>Neuroscience</h3>
+            <p>
+              Learn about the brain, neural systems, memory,
+              perception, and the biology of the mind.
+            </p>
+            <a href="#neuroscience">Explore neuroscience →</a>
+          </article>
+
+        </div>
+      </section>
+
+
+      <!-- DAILY IDEAS -->
+      <section class="daily-section" id="daily-ideas">
+        <p class="eyebrow">A LITTLE SOMETHING TO THINK ABOUT</p>
+        <h2>Daily Ideas</h2>
+
+        <p>
+          One idea can change the way you see an entire subject.
+        </p>
+
+        <div class="daily-grid">
+          <article class="daily-card">
+            <h3>Philosophy</h3>
+            <p>Questions about existence, meaning, and reality.</p>
+          </article>
+
+          <article class="daily-card">
+            <h3>Psychology</h3>
+            <p>Insights into behaviour, personality, and thought.</p>
+          </article>
+
+          <article class="daily-card">
+            <h3>Neuroscience</h3>
+            <p>Discoveries about the brain and nervous system.</p>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- PERCEPTION LAB -->
+      <section class="perception-section">
+        <div class="section-heading">
+          <p class="eyebrow">QUESTION YOUR PERSPECTIVE</p>
+          <h2>Perception Lab</h2>
+        </div>
+
+        <p>
+          Explore how context, assumptions, and interpretation
+          can influence the way people understand the same situation.
+        </p>
+
+        <button class="secondary-button" id="perceptionButton" type="button">
+          Enter the Lab
+        </button>
+      </section>
+
+
+      <!-- CLOSING -->
+      <section class="closing-section">
+        <img
+          src="assets/closing-landscape.svg"
+          alt="A quiet atmospheric landscape"
+        >
+
+        <div class="closing-content">
+          <p class="eyebrow">STAY CURIOUS</p>
+          <h2>Never stop questioning.</h2>
+          <p>Think independently. Explore deeply. Keep learning.</p>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <a href="#home" class="logo">Mind<span>Vault</span></a>
+
+      <p>
+        A space for curious minds.
+      </p>
+
+      <p class="copyright">
+        © 2026 MindVault. All rights reserved.
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
