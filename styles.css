@@ -1,0 +1,1347 @@
+body {
+    background: red !important;
+}
+/* =========================================
+MINDVAULT
+Main Stylesheet
+Version 1.0
+========================================= */
+
+/* =========================================
+
+1. ROOT VARIABLES
+   ========================================= */
+
+:root {
+--background: #171916;
+--background-soft: #1d211c;
+--background-light: #252a23;
+
+--surface: #20241f;
+
+--text-primary: #e8e5d9;
+--text-secondary: #aaa99c;
+--text-muted: #77796f;
+
+--accent: #a4a88b;
+--accent-dark: #747b61;
+
+--border: rgba(225, 225, 205, 0.13);
+
+--font-main: "Georgia", "Times New Roman", serif;
+--font-ui: "Arial", "Helvetica", sans-serif;
+
+--transition: 0.35s ease;
+
+--page-width: 1280px;
+}
+
+/* =========================================
+02. RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 90px;
+}
+
+body {
+background: var(--background);
+color: var(--text-primary);
+font-family: var(--font-ui);
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+body,
+button,
+a {
+-webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea {
+font: inherit;
+}
+
+button {
+color: inherit;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+img {
+display: block;
+width: 100%;
+}
+
+::selection {
+background: var(--accent);
+color: var(--background);
+}
+
+[hidden] {
+display: none !important;
+}
+
+/* =========================================
+03. GLOBAL TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3 {
+font-family: var(--font-main);
+font-weight: 400;
+line-height: 1.2;
+}
+
+h1 {
+letter-spacing: -1.8px;
+}
+
+h2 {
+letter-spacing: -1px;
+}
+
+p {
+color: var(--text-secondary);
+}
+
+.section-eyebrow {
+color: var(--accent);
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 3px;
+line-height: 1.8;
+text-transform: uppercase;
+}
+
+/* =========================================
+04. ENTRY SCREEN
+========================================= */
+
+.entry-screen {
+position: fixed;
+inset: 0;
+z-index: 1000;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+min-height: 100svh;
+overflow: hidden;
+
+background: var(--background);
+}
+
+.entry-background,
+.entry-overlay {
+position: absolute;
+inset: 0;
+}
+
+.entry-background img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+
+animation: entryZoom 18s ease-in-out infinite alternate;
+}
+
+.entry-overlay {
+background:
+linear-gradient(
+90deg,
+rgba(15, 19, 16, 0.82),
+rgba(15, 19, 16, 0.36),
+rgba(15, 19, 16, 0.75)
+),
+linear-gradient(
+0deg,
+rgba(15, 19, 16, 0.75),
+transparent 65%
+);
+}
+
+.entry-content {
+position: relative;
+z-index: 2;
+
+width: min(90%, 800px);
+text-align: center;
+
+animation: fadeUp 1.2s ease both;
+}
+
+.entry-eyebrow {
+margin-bottom: 26px;
+
+color: #c0c0a8;
+
+font-size: 10px;
+letter-spacing: 5px;
+font-weight: 600;
+}
+
+.entry-title {
+font-family: var(--font-main);
+font-size: clamp(55px, 11vw, 112px);
+font-weight: 400;
+letter-spacing: 8px;
+
+color: #f0eee2;
+}
+
+.entry-tagline {
+margin-top: 15px;
+
+font-family: var(--font-main);
+font-size: clamp(15px, 2vw, 21px);
+font-style: italic;
+
+color: #d1d0c3;
+}
+
+.enter-button {
+display: inline-flex;
+align-items: center;
+gap: 25px;
+
+margin-top: 55px;
+padding: 15px 28px;
+
+border: 1px solid rgba(225, 225, 205, 0.5);
+background: rgba(20, 23, 19, 0.25);
+
+color: #eeeadd;
+
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 3px;
+
+cursor: pointer;
+transition: var(--transition);
+}
+
+.enter-button span {
+font-size: 17px;
+}
+
+.enter-button:hover {
+background: var(--accent);
+border-color: var(--accent);
+color: #171916;
+
+transform: translateY(-3px);
+}
+
+.entry-footer {
+position: absolute;
+bottom: 35px;
+left: 0;
+right: 0;
+
+z-index: 2;
+
+text-align: center;
+
+color: rgba(230, 229, 210, 0.7);
+
+font-size: 9px;
+letter-spacing: 3px;
+}
+
+/* =========================================
+05. MAIN WEBSITE
+========================================= */
+
+.site-wrapper {
+width: 100%;
+min-height: 100vh;
+
+animation: fadeIn 1s ease both;
+}
+
+/* =========================================
+06. HEADER
+========================================= */
+
+.site-header {
+position: sticky;
+top: 0;
+z-index: 100;
+
+width: 100%;
+min-height: 82px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+padding: 0 7%;
+
+background: rgba(23, 25, 22, 0.94);
+border-bottom: 1px solid var(--border);
+
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+}
+
+.wordmark {
+font-family: var(--font-main);
+font-size: 23px;
+letter-spacing: 4px;
+
+color: var(--text-primary);
+}
+
+.desktop-navigation {
+display: flex;
+align-items: center;
+gap: 35px;
+}
+
+.desktop-navigation a {
+position: relative;
+
+color: var(--text-secondary);
+
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 1.3px;
+
+transition: color var(--transition);
+}
+
+.desktop-navigation a::after {
+content: "";
+
+position: absolute;
+left: 0;
+bottom: -7px;
+
+width: 0;
+height: 1px;
+
+background: var(--accent);
+
+transition: width var(--transition);
+}
+
+.desktop-navigation a:hover {
+color: var(--text-primary);
+}
+
+.desktop-navigation a:hover::after {
+width: 100%;
+}
+
+.header-actions {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.account-button {
+padding: 11px 20px;
+
+border: 1px solid var(--border);
+background: transparent;
+
+color: var(--text-primary);
+
+font-size: 9px;
+letter-spacing: 2px;
+
+cursor: pointer;
+transition: var(--transition);
+}
+
+.account-button:hover {
+background: var(--accent);
+border-color: var(--accent);
+color: var(--background);
+}
+
+/* =========================================
+07. MOBILE NAVIGATION
+========================================= */
+
+.mobile-menu-button {
+display: none;
+
+width: 38px;
+height: 38px;
+
+border: 1px solid var(--border);
+background: transparent;
+
+cursor: pointer;
+}
+
+.mobile-menu-button span {
+display: block;
+
+width: 17px;
+height: 1px;
+
+margin: 5px auto;
+
+background: var(--text-primary);
+}
+
+.mobile-navigation {
+position: absolute;
+top: 82px;
+left: 0;
+right: 0;
+z-index: 99;
+
+padding: 20px 7% 30px;
+
+background: #1b1f1a;
+border-bottom: 1px solid var(--border);
+}
+
+.mobile-navigation a {
+display: block;
+padding: 13px 0;
+
+border-bottom: 1px solid var(--border);
+
+color: var(--text-secondary);
+
+font-size: 12px;
+letter-spacing: 1px;
+}
+
+.mobile-navigation a:hover {
+color: var(--accent);
+}
+
+/* =========================================
+08. HERO SECTION
+========================================= */
+
+.hero-section {
+position: relative;
+
+min-height: 690px;
+min-height: min(820px, 90svh);
+
+display: flex;
+align-items: center;
+
+overflow: hidden;
+}
+
+.hero-image,
+.hero-shade {
+position: absolute;
+inset: 0;
+}
+
+.hero-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.hero-shade {
+background:
+linear-gradient(
+90deg,
+rgba(17, 21, 17, 0.93) 0%,
+rgba(17, 21, 17, 0.75) 42%,
+rgba(17, 21, 17, 0.15) 100%
+),
+linear-gradient(
+0deg,
+rgba(17, 21, 17, 0.7),
+transparent 55%
+);
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+
+width: min(85%, 800px);
+margin-left: 10%;
+
+animation: fadeUp 1s ease both;
+}
+
+.hero-content .section-eyebrow {
+margin-bottom: 27px;
+}
+
+.hero-content h1 {
+max-width: 760px;
+
+font-size: clamp(43px, 6.4vw, 79px);
+color: #f0eee4;
+}
+
+.hero-content h1 span {
+display: block;
+
+color: #b5b99b;
+font-style: italic;
+}
+
+.hero-description {
+max-width: 530px;
+
+margin-top: 27px;
+
+font-size: 14px;
+line-height: 2;
+
+color: #c3c3b7;
+}
+
+.primary-link {
+display: inline-flex;
+align-items: center;
+gap: 24px;
+
+margin-top: 38px;
+padding-bottom: 11px;
+
+border-bottom: 1px solid var(--accent);
+
+color: #e7e5d8;
+
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 2px;
+
+transition: var(--transition);
+}
+
+.primary-link span {
+font-size: 17px;
+transition: transform var(--transition);
+}
+
+.primary-link:hover {
+color: var(--accent);
+}
+
+.primary-link:hover span {
+transform: translate(4px, -4px);
+}
+
+.hero-bottom-label {
+position: absolute;
+bottom: 32px;
+left: 7%;
+right: 7%;
+
+display: flex;
+justify-content: space-between;
+
+color: #b6b6a8;
+
+font-size: 9px;
+letter-spacing: 2px;
+}
+
+/* =========================================
+09. INTRODUCTION
+========================================= */
+
+.introduction-section {
+padding: 145px 12%;
+
+text-align: center;
+
+background: var(--background-soft);
+}
+
+.introduction-section h2 {
+max-width: 850px;
+
+margin: 30px auto;
+
+font-size: clamp(36px, 5vw, 61px);
+}
+
+.introduction-section h2 span {
+display: block;
+
+color: var(--accent);
+font-style: italic;
+}
+
+.introduction-section > p:last-child {
+max-width: 660px;
+
+margin: 0 auto;
+
+font-size: 14px;
+line-height: 2.1;
+}
+
+/* =========================================
+10. SECTION HEADINGS
+========================================= */
+
+.explore-section,
+.daily-ideas-section,
+.thought-section {
+padding: 120px 10%;
+}
+
+.section-heading {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+
+gap: 40px;
+
+margin-bottom: 65px;
+}
+
+.section-heading h2 {
+margin-top: 15px;
+
+font-size: clamp(37px, 5vw, 58px);
+}
+
+.section-heading > p {
+max-width: 330px;
+
+font-size: 12px;
+line-height: 2;
+}
+
+/* =========================================
+11. EXPLORATION ITEMS
+========================================= */
+
+.explore-section {
+background: var(--background);
+}
+
+.exploration-item {
+display: grid;
+grid-template-columns: 100px 1fr;
+
+gap: 45px;
+
+padding: 52px 0;
+
+border-top: 1px solid var(--border);
+
+scroll-margin-top: 110px;
+}
+
+.exploration-item:last-child {
+border-bottom: 1px solid var(--border);
+}
+
+.exploration-number {
+padding-top: 5px;
+
+color: var(--accent-dark);
+
+font-family: var(--font-main);
+font-size: 38px;
+}
+
+.exploration-content {
+max-width: 700px;
+}
+
+.exploration-content h3 {
+margin-top: 12px;
+
+font-size: clamp(27px, 3vw, 37px);
+}
+
+.exploration-content > p:not(.section-eyebrow):not(.item-meta) {
+max-width: 620px;
+
+margin-top: 17px;
+
+font-size: 13px;
+line-height: 2;
+}
+
+.item-meta {
+margin-top: 22px;
+
+color: var(--text-muted);
+
+font-size: 9px;
+font-weight: 600;
+letter-spacing: 2px;
+}
+
+.text-link {
+display: inline-flex;
+align-items: center;
+gap: 17px;
+
+margin-top: 24px;
+padding: 0 0 7px;
+
+border: none;
+border-bottom: 1px solid var(--accent-dark);
+
+background: transparent;
+
+color: var(--text-primary);
+
+font-size: 9px;
+font-weight: 600;
+letter-spacing: 2px;
+
+cursor: pointer;
+transition: var(--transition);
+}
+
+.text-link span {
+font-size: 15px;
+}
+
+.text-link:hover {
+color: var(--accent);
+border-color: var(--accent);
+
+gap: 24px;
+}
+
+/* =========================================
+12. DAILY IDEAS
+========================================= */
+
+.daily-ideas-section {
+background: var(--background-soft);
+}
+
+.daily-ideas-content {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+
+border-top: 1px solid var(--border);
+border-bottom: 1px solid var(--border);
+
+margin-bottom: 35px;
+}
+
+.idea-category {
+padding: 42px 32px;
+
+border-right: 1px solid var(--border);
+
+transition: background var(--transition);
+}
+
+.idea-category:last-child {
+border-right: none;
+}
+
+.idea-category:hover {
+background: rgba(164, 168, 139, 0.055);
+}
+
+.idea-category > span:first-child {
+color: var(--accent);
+
+font-family: var(--font-main);
+font-size: 30px;
+}
+
+.idea-category h3 {
+margin-top: 22px;
+
+font-size: 28px;
+}
+
+.idea-category p {
+margin-top: 12px;
+
+font-size: 12px;
+line-height: 2;
+}
+
+.idea-category .item-meta {
+display: block;
+}
+
+/* =========================================
+13. THOUGHT OF THE DAY
+========================================= */
+
+.thought-section {
+background: var(--background);
+}
+
+.thought-section > h2 {
+max-width: 650px;
+
+margin-top: 24px;
+
+font-size: clamp(37px, 5vw, 58px);
+}
+
+.thought-section > p:not(.section-eyebrow) {
+max-width: 580px;
+
+margin-top: 20px;
+
+font-size: 13px;
+line-height: 2;
+}
+
+.thought-collections {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+
+gap: 30px;
+
+margin-top: 65px;
+padding-top: 35px;
+
+border-top: 1px solid var(--border);
+}
+
+.thought-collections h3 {
+font-size: 23px;
+}
+
+.thought-collections p {
+margin-top: 13px;
+
+font-size: 12px;
+line-height: 2;
+}
+
+/* =========================================
+14. CLOSING SECTION
+========================================= */
+
+.closing-section {
+position: relative;
+
+min-height: 490px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+overflow: hidden;
+
+text-align: center;
+}
+
+.closing-background,
+.closing-overlay {
+position: absolute;
+inset: 0;
+}
+
+.closing-background img {
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+}
+
+.closing-overlay {
+background: rgba(15, 19, 15, 0.75);
+}
+
+.closing-content {
+position: relative;
+z-index: 2;
+
+width: min(90%, 750px);
+}
+
+.closing-content h2 {
+margin-top: 25px;
+
+font-size: clamp(36px, 5vw, 58px);
+}
+
+.closing-content h2 span {
+display: block;
+
+color: var(--accent);
+font-style: italic;
+}
+
+/* =========================================
+15. FOOTER
+========================================= */
+
+.site-footer {
+padding: 75px 8% 25px;
+
+background: #121511;
+}
+
+.footer-main {
+display: grid;
+grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+gap: 45px;
+
+padding-bottom: 65px;
+}
+
+.footer-brand .wordmark {
+font-size: 22px;
+}
+
+.footer-brand p {
+margin-top: 17px;
+
+font-family: var(--font-main);
+font-size: 15px;
+font-style: italic;
+}
+
+.footer-column h3 {
+margin-bottom: 22px;
+
+color: var(--accent);
+
+font-family: var(--font-ui);
+font-size: 9px;
+font-weight: 600;
+letter-spacing: 2px;
+}
+
+.footer-column a {
+display: block;
+
+margin-bottom: 12px;
+
+color: var(--text-secondary);
+
+font-size: 11px;
+
+transition: color var(--transition);
+}
+
+.footer-column a:hover {
+color: var(--accent);
+}
+
+.footer-bottom {
+display: flex;
+justify-content: space-between;
+
+gap: 20px;
+
+padding-top: 23px;
+
+border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+font-size: 9px;
+letter-spacing: 1px;
+}
+
+/* =========================================
+16. ACCOUNT DIALOG
+========================================= */
+
+.account-dialog {
+position: fixed;
+
+width: min(90%, 480px);
+max-width: 480px;
+
+margin: auto;
+padding: 0;
+
+border: 1px solid var(--border);
+
+background: #1c201b;
+color: var(--text-primary);
+}
+
+.account-dialog::backdrop {
+background: rgba(0, 0, 0, 0.8);
+backdrop-filter: blur(5px);
+}
+
+.dialog-content {
+position: relative;
+
+padding: 55px 45px;
+}
+
+.dialog-close {
+position: absolute;
+top: 15px;
+right: 20px;
+
+border: none;
+background: transparent;
+
+color: var(--text-secondary);
+
+font-size: 28px;
+
+cursor: pointer;
+transition: color var(--transition);
+}
+
+.dialog-close:hover {
+color: var(--accent);
+}
+
+.dialog-content h2 {
+margin-top: 20px;
+
+font-size: 36px;
+}
+
+.dialog-content > p:not(.section-eyebrow):not(.item-meta) {
+margin-top: 20px;
+
+font-size: 13px;
+line-height: 2;
+}
+
+/* =========================================
+17. ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+outline: 2px solid var(--accent);
+outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+scroll-behavior: auto !important;
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+}
+}
+
+/* =========================================
+18. ANIMATIONS
+========================================= */
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+
+to {
+opacity: 1;
+}
+}
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(25px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes entryZoom {
+from {
+transform: scale(1);
+}
+
+to {
+transform: scale(1.08);
+}
+}
+
+/* =========================================
+19. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+
+.site-header {
+padding: 0 5%;
+}
+
+.desktop-navigation {
+gap: 19px;
+}
+
+.explore-section,
+.daily-ideas-section,
+.thought-section {
+padding: 100px 7%;
+}
+
+.footer-main {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.hero-content {
+margin-left: 7%;
+}
+
+}
+
+/* =========================================
+20. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+
+html {
+scroll-padding-top: 75px;
+}
+
+.site-header {
+min-height: 72px;
+padding: 0 6%;
+}
+
+.wordmark {
+font-size: 19px;
+letter-spacing: 3px;
+}
+
+.desktop-navigation {
+display: none;
+}
+
+.mobile-menu-button {
+display: block;
+}
+
+.account-button {
+padding: 9px 12px;
+font-size: 8px;
+}
+
+.mobile-navigation {
+top: 72px;
+}
+
+.hero-section {
+min-height: 690px;
+min-height: 85svh;
+}
+
+.hero-shade {
+background:
+linear-gradient(
+90deg,
+rgba(17, 21, 17, 0.83),
+rgba(17, 21, 17, 0.42)
+),
+linear-gradient(
+0deg,
+rgba(17, 21, 17, 0.75),
+transparent
+);
+}
+
+.hero-content {
+width: 87%;
+margin-left: 6%;
+}
+
+.hero-content h1 {
+font-size: clamp(42px, 10vw, 60px);
+}
+
+.hero-description {
+font-size: 12px;
+}
+
+.hero-bottom-label {
+left: 6%;
+right: 6%;
+
+font-size: 7px;
+letter-spacing: 1px;
+
+}
+
+.entry-title {
+font-size: clamp(43px, 12vw, 75px);
+letter-spacing: 4px;
+}
+
+.entry-eyebrow {
+font-size: 8px;
+letter-spacing: 3px;
+}
+
+.entry-footer {
+font-size: 7px;
+letter-spacing: 2px;
+}
+
+.introduction-section {
+padding: 95px 7%;
+}
+
+.introduction-section h2 {
+font-size: 39px;
+}
+
+.introduction-section > p:last-child {
+font-size: 12px;
+}
+
+.explore-section,
+.daily-ideas-section,
+.thought-section {
+padding: 85px 7%;
+}
+
+.section-heading {
+display: block;
+margin-bottom: 45px;
+}
+
+.section-heading h2 {
+font-size: 40px;
+}
+
+.section-heading > p {
+margin-top: 18px;
+font-size: 12px;
+}
+
+.exploration-item {
+grid-template-columns: 42px 1fr;
+gap: 16px;
+
+padding: 38px 0;
+
+}
+
+.exploration-number {
+font-size: 25px;
+}
+
+.exploration-content h3 {
+font-size: 27px;
+}
+
+.exploration-content > p:not(.section-eyebrow):not(.item-meta) {
+font-size: 12px;
+}
+
+.daily-ideas-content {
+grid-template-columns: 1fr;
+}
+
+.idea-category {
+padding: 30px 20px;
+
+border-right: none;
+border-bottom: 1px solid var(--border);
+
+}
+
+.idea-category:last-child {
+border-bottom: none;
+}
+
+.thought-collections {
+grid-template-columns: 1fr;
+gap: 35px;
+
+margin-top: 45px;
+
+}
+
+.thought-collections h3 {
+font-size: 22px;
+}
+
+.closing-section {
+min-height: 410px;
+}
+
+.closing-content h2 {
+font-size: 39px;
+}
+
+.footer-main {
+grid-template-columns: 1fr 1fr;
+gap: 40px 20px;
+}
+
+.footer-bottom {
+flex-direction: column;
+gap: 12px;
+}
+
+.footer-bottom p {
+font-size: 8px;
+line-height: 1.8;
+}
+
+.dialog-content {
+padding: 50px 27px;
+}
+
+}
+
+/* =========================================
+21. SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+
+.wordmark {
+font-size: 16px;
+}
+
+.account-button {
+padding: 8px 9px;
+font-size: 7px;
+}
+
+.header-actions {
+gap: 10px;
+}
+
+.hero-content h1 {
+font-size: 39px;
+}
+
+.footer-main {
+grid-template-columns: 1fr;
+}
+
+.entry-title {
+font-size: 40px;
+}
+
+}
